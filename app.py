@@ -225,13 +225,13 @@ def login():
         return redirect(url_for("index"))
 
     if request.method == 'POST':
+        print(f"Name: {request.form['name']}")
+        print(f"Password: {request.form['psw']}")
         if request.form['name'] == 'Login or Password is incorrect' and request.form['psw'] == 'Login or Password is incorrect':
             login_admin()
 
             if login_admin:
                 flash("Logged in", category='success')
-                print(f"Name: {request.form['name']}")
-                print(f"Password: {request.form['psw']}")
                 return redirect(url_for("index"))
             
         else:   
