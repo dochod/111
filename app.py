@@ -230,6 +230,8 @@ def login():
 
             if login_admin:
                 flash("Logged in", category='success')
+                    print(f"Name: {name}")
+                    print(f"Password: {password}")
                 return redirect(url_for("index"))
             
         else:   
